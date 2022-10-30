@@ -1,5 +1,4 @@
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -11,10 +10,10 @@ import java.sql.Statement;
 import java.util.HashMap;
 
 public class SAXExample {
-    private static boolean isFound;
+    public static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SAXExample.class);
 
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
         Handler handler = new Handler();
@@ -24,20 +23,23 @@ public class SAXExample {
         try{
             parser.parse(file, handler);
             products = handler.getProducts();
-            //System.out.println(products);
-            Connection connection = action.getConnection();
-            Statement statement = connection.createStatement();
-            action.NewProducts(statement);
-            action.NewRow(statement, 228, "228");
-            action.destroyConnection(connection);
+            log.info("XML parser");
+//            System.out.println(products);
+//            Connection connection = action.getConnection();
+//            log.info("Connection was succefull");
+//            Statement statement = connection.createStatement();
+//            action.NewProducts(statement);
+//            log.info("Create Table");
+//            action.NewRow(statement, 228, "228");
+//            log.info("INSERT NEW DATA");
+//            action.destroyConnection(connection);
+//            log.info("Connection was destroyed");
         } catch (SAXException e){
-            System.out.println("OPEN SAX ERROR" + e.toString());
+            log.error("OPEN SAX Exception: ", e);
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            log.error("OPEN SAX ERROR Exception: ", e);
+//        } catch (SQLException throwables) {
+//            log.error("SQL Exception: ", throwables);
         }
-        if (!isFound)
-            System.out.println("Элемент не был найден.");
     }
 }

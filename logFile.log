@@ -1,0 +1,11 @@
+30.10.2022 22:39:21.348 [main] INFO   SAXExample - XML parser
+30.10.2022 22:39:21.640 [main] INFO   SAXExample - Connection was succefull
+30.10.2022 22:39:21.720 [main] INFO   SAXExample - Create Table
+30.10.2022 22:39:21.720 [main] INFO   SAXExample - INSERT NEW DATA
+30.10.2022 22:39:21.741 [main] INFO   SAXExample - Connection was destroyed
+30.10.2022 22:40:35.150 [main] INFO   SAXExample - XML parser
+30.10.2022 22:40:35.410 [main] INFO   SAXExample - Connection was succefull
+30.10.2022 22:40:35.501 [main] INFO   SAXExample - Create Table
+30.10.2022 22:40:35.504 [main] INFO   SAXExample - INSERT NEW DATA
+30.10.2022 22:40:35.529 [main] INFO   SAXExample - Connection was destroyed
+30.10.2022 22:48:53.653 [main] INFO   SAXExample - XML parser
