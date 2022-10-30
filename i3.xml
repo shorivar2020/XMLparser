@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <oracle>
+        <connection value="jdbc:oracle:thin:@10.220.140.48:1521:test1" />
+        <user value="secretOracleUsername" />
+        <password value="111" />
+    </oracle>
+</root>
+<B2B>
+    <Product>
+        <ID>70410</ID>
+        <EAN>5024982650744</EAN>
+        <PartNumber>27429</PartNumber>
+        <Name>Glacier Gaiter</Name>
+        <Name2>
+            <Title>Návleky Mountain Equipment Glacier Gaiter | Black L</Title>
+            <Language>cs</Language>
+        </Name2>
+        <ITEMGROUP_ID>70410</ITEMGROUP_ID>
+        <Manufacturer>Mountain Equipment</Manufacturer>
+        <Supplier>Summit Trade Distribution</Supplier>
+        <CountryOfOrigin>not available</CountryOfOrigin>
+        <MeasureUnit>ks</MeasureUnit>
+        <RecommendedRetailPriceWithVat>
+            <Price>1890</Price>
+            <Currency>CZK</Currency>
+        </RecommendedRetailPriceWithVat>
+        <RecommendedRetailPriceWithVat>
+            <Price>69,95</Price>
+            <Currency>EUR</Currency>
+        </RecommendedRetailPriceWithVat>
+        <VAT>
+            <Rate>Základní sazba</Rate>
+            <Country>CZ</Country>
+        </VAT>
+        <VAT>
+            <Rate>Základní sazba</Rate>
+            <Country>SK</Country>
+        </VAT>
+        <Documents>
+            <ImageLink>https://www.summitacademy.cz/Files/ProductDocuments/7143016d-3d77-411d-9d91-7c894c5fa37e.jpg</ImageLink>
+            <AdditionalImageLink>https://www.summitacademy.cz/Files/ProductDocuments/61e8a184-fb2f-49cb-be74-d82b1d2d1b15.jpg</AdditionalImageLink>
+            <AdditionalImageLink>https://www.summitacademy.cz/Files/ProductDocuments/d58e16b3-b0d7-4e2b-839e-880593e0462b.jpg</AdditionalImageLink>
+            <AdditionalImageLink>https://www.summitacademy.cz/Files/ProductDocuments/e328f47d-3d1e-401f-a77e-cbb522d233a1.jpg</AdditionalImageLink>
+            <Document>
+                <Name>
+                </Name>
+                <Link>
+                </Link>
+            </Document>
+            <Certificate>
+                <Link>
+                </Link>
+                <Description>
+                </Description>
+                <ImageLink>
+                </ImageLink>
+            </Certificate>
+            <Video>
+            </Video>
+        </Documents>
+        <Availability>
+            <internal>5</internal>
+            <external>0</external>
+            <manufacturer>5</manufacturer>
+        </Availability>
+        <Guarantee>not available</Guarantee>
+        <GuaranteeType>not available</GuaranteeType>
+        <Conditions>
+            <IsNew>false</IsNew>
+            <IsSale>false</IsSale>
+            <IsOutlet>false</IsOutlet>
+        </Conditions>
+        <Season>not available</Season>
+        <Param>
+            <Name>Barva</Name>
+            <Value>Black</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Hrubost vláken</Name>
+            <Value>500</Value>
+            <Unit>D</Unit>
+        </Param>
+        <Param>
+            <Name>Materiál</Name>
+            <Value>Polyester</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Membrána</Name>
+            <Value>3L GGORE-TEX® 75D</Value>
+            <Unit>
+            </Unit>
+        </Param>
+
+    </Product>
+</B2B>
