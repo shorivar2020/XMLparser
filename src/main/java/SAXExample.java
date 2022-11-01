@@ -21,25 +21,25 @@ public class SAXExample {
         Action action = new Action();
         File file = new File("information.xml");
         try{
-            parser.parse(file, handler);
-            products = handler.getProducts();
-            log.info("XML parser");
+//            parser.parse(file, handler);
+//            products = handler.getProducts();
+//            log.info("XML parser");
 //            System.out.println(products);
-//            Connection connection = action.getConnection();
-//            log.info("Connection was succefull");
-//            Statement statement = connection.createStatement();
-//            action.NewProducts(statement);
-//            log.info("Create Table");
+            Connection connection = action.getConnection();
+            log.info("Connection was succefull");
+            Statement statement = connection.createStatement();
+            action.NewProducts(statement);
+            log.info("Create Table");
 //            action.NewRow(statement, 228, "228");
 //            log.info("INSERT NEW DATA");
 //            action.destroyConnection(connection);
 //            log.info("Connection was destroyed");
-        } catch (SAXException e){
-            log.error("OPEN SAX Exception: ", e);
-        } catch (IOException e) {
-            log.error("OPEN SAX ERROR Exception: ", e);
-//        } catch (SQLException throwables) {
-//            log.error("SQL Exception: ", throwables);
+//        } catch (SAXException e){
+//            log.error("OPEN SAX Exception: ", e);
+//        } catch (IOException e) {
+//            log.error("OPEN SAX ERROR Exception: ", e);
+        } catch (SQLException throwables) {
+            log.error("SQL Exception: ", throwables);
         }
     }
 }

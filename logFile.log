@@ -1,11 +1,210 @@
-30.10.2022 22:39:21.348 [main] INFO   SAXExample - XML parser
-30.10.2022 22:39:21.640 [main] INFO   SAXExample - Connection was succefull
-30.10.2022 22:39:21.720 [main] INFO   SAXExample - Create Table
-30.10.2022 22:39:21.720 [main] INFO   SAXExample - INSERT NEW DATA
-30.10.2022 22:39:21.741 [main] INFO   SAXExample - Connection was destroyed
-30.10.2022 22:40:35.150 [main] INFO   SAXExample - XML parser
-30.10.2022 22:40:35.410 [main] INFO   SAXExample - Connection was succefull
-30.10.2022 22:40:35.501 [main] INFO   SAXExample - Create Table
-30.10.2022 22:40:35.504 [main] INFO   SAXExample - INSERT NEW DATA
-30.10.2022 22:40:35.529 [main] INFO   SAXExample - Connection was destroyed
-30.10.2022 22:48:53.653 [main] INFO   SAXExample - XML parser
+01.11.2022 00:05:41.921 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:05:42.038 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[], WithVat VARCHAR(64), VATRate VARCHAR(64), VATCountry VARCHAR[], ShortDescrip' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 00:06:27.450 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:06:27.472 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: Unknown table 'parserxml.products'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:35)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 00:07:06.038 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:07:06.057 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: Unknown table 'parserxml.products'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:35)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 00:07:32.941 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:07:32.963 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[], WithVat VARCHAR(64), VATRate VARCHAR(64), VATCountry VARCHAR[], ShortDescrip' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 00:08:15.357 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:08:15.378 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: Unknown table 'parserxml.products'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:34)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 00:08:48.825 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:08:49.250 [main] INFO   SAXExample - Create Table
+01.11.2022 00:08:49.257 [main] INFO   SAXExample - INSERT NEW DATA
+01.11.2022 00:08:49.268 [main] INFO   SAXExample - Connection was destroyed
+01.11.2022 00:09:30.461 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:09:30.552 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[], WithVat VARCHAR(64), VATRate VARCHAR(64), VATCountry VARCHAR[], ShortDescrip' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 00:10:44.998 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:10:45.018 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 00:12:19.903 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:12:19.959 [main] INFO   SAXExample - Create Table
+01.11.2022 00:13:04.597 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:13:04.632 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[])' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 00:24:59.523 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 00:24:59.656 [main] INFO   SAXExample - Create Table
+01.11.2022 01:16:40.203 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:16:40.679 [main] INFO   SAXExample - Create Table
+01.11.2022 01:38:04.112 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:38:04.163 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP NOT NULL DEFAULT '1970-01-01 00:00:01', EndDate TIMESTAMP NO' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:38:42.454 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:38:42.472 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP NOT NULL, EndDate TIMESTAMP NOT NULL,  IsCurrent VARCHAR(3))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:39:01.122 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:39:01.144 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(3))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:39:26.761 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:39:26.786 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP , EndDate TIMESTAMP,  IsCurrent VARCHAR(64))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:39:57.925 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:39:57.943 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IsCurrent VARCHAR(64))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:40:19.402 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:40:19.542 [main] INFO   SAXExample - Create Table
+01.11.2022 01:40:47.546 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:40:47.612 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: Invalid default value for 'StartDate'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:37)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:40:59.494 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:40:59.623 [main] INFO   SAXExample - Create Table
+01.11.2022 01:56:35.294 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:56:35.422 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:49)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:56:54.379 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:56:54.494 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:52)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:57:04.386 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:57:04.537 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:55)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:57:16.894 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:57:17.108 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:60)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:57:31.699 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:57:31.900 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:63)
+	at SAXExample.main(SAXExample.java:31)
+01.11.2022 01:57:46.456 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:57:46.793 [main] INFO   SAXExample - Create Table
+01.11.2022 01:59:25.971 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:59:26.295 [main] INFO   SAXExample - Create Table
+01.11.2022 01:59:49.668 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 01:59:50.000 [main] INFO   SAXExample - Create Table
