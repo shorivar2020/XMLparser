@@ -32,25 +32,86 @@ public class SAXExample {
             action.NewProducts(statement);
             log.info("Create Table");
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+           // action.CheckExist(statement, "vat", 81925);
             //System.out.println(timestamp);
             products.forEach((k, r) -> {
-                try {
-                    action.NewRowDocuments(statement, timestamp, r.getID(), r.getImageLink().toString(), null,
-                            r.getDocumentName(), r.getDocumentLink(), r.getCertificates().getLink(), r.getCertificates().getDescriptions(),
-                            r.getCertificates().getImageLink());
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                r.getUndefinedData().forEach((l, m) -> {
+                    try {
+                        action.CheckExist(statement, "undefineddata", r.getID());
+                        action.NewUndefinedData(statement, timestamp, r.getID(), l, m);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                });
             });
-
-//            action.NewRowDocuments(statement, timestamp, 98265,  "https://www.summitacademy.cz/Files/ProductDocuments/1488378e-48b1-477a-8e33-3771de1d18ee.jpg", null,
-//                    null, null, null, null,
-//                    null);
-               ;
-//            products.forEach((k, r) -> System.out.printf(r.getID() + "/" + r.getImageLink().toString() + "/" + r.getVideo(),
-//                        r.getDocumentName() + "/" + r.getDocumentLink() + "/" + r.getCertificates().getLink() + "/" + r.getCertificates().getDescriptions() + "/" + r.getCertificates().getImageLink()));
-      //          System.out.println( "/" + products.get(i).getID() + "/" +  "/" + "/" + "/");
-
+//            products.forEach((k, r) -> {
+//                try {
+//                    action.CheckExist(statement, "documents", r.getID());
+//                    action.NewRowDocuments(statement, timestamp, r.getID(), r.getImageLink().toString(), null,
+//                            r.getDocumentName(), r.getDocumentLink(), r.getCertificates().getLink(), r.getCertificates().getDescriptions(),
+//                            r.getCertificates().getImageLink());
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            });
+//            products.forEach((k, r) -> {
+//                r.getAdditionalImageLink().forEach((l) -> {
+//                    try {
+//                        action.CheckExist(statement, "aditionalimage", r.getID());
+//                        action.NewRowAditionalImage(statement, timestamp, r.getID(), l);
+//                    } catch (SQLException e) {
+//                        e.printStackTrace();
+//                    }
+//                });
+//            });
+//            products.forEach((k, r) -> {
+//                try {
+//                        action.CheckExist(statement, "availability", r.getID());
+//                    action.NewRowAvailability(statement, timestamp, r.getID(), r.getAvailability().getInternal(), r.getAvailability().getExternal(),
+//                            r.getAvailability().getManufacturer());
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            });
+//            products.forEach((k, r) -> {
+//                try {
+//                        action.CheckExist(statement, "conditions", r.getID());
+//                    action.NewRowConditions(statement, timestamp, r.getID(), String.valueOf(r.getConditions().getNew()),
+//                            String.valueOf(r.getConditions().getSale()), String.valueOf(r.getConditions().getOutlet()));
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            });
+//            products.forEach((k, r) -> {
+//                r.getParam().forEach((l) -> {
+//                    try {
+//                        action.CheckExist(statement, "param", r.getID());
+//                        action.NewRowParam(statement, timestamp, r.getID(), l.getName(), l.getValue(), l.getUnit());
+//                    } catch (SQLException e) {
+//                        e.printStackTrace();
+//                    }
+//                });
+//            });
+//            products.forEach((k, r) -> {
+//                r.getRecommendedRetailPriceWithVat().forEach((l, m) -> {
+//                    try {
+//                        action.CheckExist(statement, "recommendedretailpricewithvat", r.getID());
+//                        action.NewRowRecommended(statement, timestamp, r.getID(), l, m);
+//                    } catch (SQLException e) {
+//                        e.printStackTrace();
+//                    }
+//                });
+//            });
+//            products.forEach((k, r) -> {
+//                r.getVATCountry().forEach((l) -> {
+//                    try {
+//                        action.CheckExist(statement, "vat", r.getID());
+//                        action.NewRowVAT(statement, timestamp, r.getID(), r.getVATRate(), l);
+//                    } catch (SQLException e) {
+//                        e.printStackTrace();
+//                    }
+//                });
+//            });
 //            action.NewRow(statement, 228, "228");
 //            log.info("INSERT NEW DATA");
 //            action.destroyConnection(connection);

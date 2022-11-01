@@ -3,6 +3,10 @@ import java.util.*;
 public class Root {
 //    @Override
 //    public String toString() {
+
+    public String getVATRate() {
+        return VATRate;
+    }
 //        return "Root{" + ID + "/" + EAN + "/" + PartNumber + "/"
 //                + Name + "/" + Title + "/" + Language + "/"
 //                + ITEMGROUP_ID + "/" + Manufacturer + "/" + Supplier + "/"
@@ -32,7 +36,7 @@ public class Root {
     private Map<String, String> RecommendedRetailPriceWithVat = new HashMap<String, String>();
     private String WithVat;
     private String VATRate;
-    private Set<String> VATCountry = new HashSet<>();
+    private ArrayList<String> VATCountry = new ArrayList<>();
     private ArrayList<String> ShortDescription = new ArrayList<>();
     private ArrayList<String> LargeDescription = new ArrayList<>();
     //Documents
@@ -47,6 +51,16 @@ public class Root {
     private Conditions Conditions;
     private String Season;
     private HashSet<Param> Param  = new HashSet<>();
+
+    public HashMap<String, String> getUndefinedData() {
+        return undefinedData;
+    }
+
+    public void setUndefinedData(String tag, String data) {
+        this.undefinedData.put(tag, data);
+    }
+
+    private HashMap<String, String> undefinedData = new HashMap<>();
 
     public String getDocumentName() {
         return DocumentName;
@@ -217,9 +231,10 @@ public class Root {
         return RecommendedRetailPriceWithVat;
     }
 
-    public Set getVATCountry() {
+    public ArrayList<String> getVATCountry() {
         return VATCountry;
     }
+
 
     public ArrayList<String> getShortDescription() {
         return ShortDescription;

@@ -361,3 +361,153 @@ com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long
 01.11.2022 05:48:18.417 [main] INFO   SAXExample - XML parser
 01.11.2022 05:48:18.751 [main] INFO   SAXExample - Connection was succefull
 01.11.2022 05:48:19.195 [main] INFO   SAXExample - Create Table
+01.11.2022 18:04:21.439 [main] INFO   SAXExample - XML parser
+01.11.2022 18:04:22.986 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:04:23.052 [main] INFO   SAXExample - Create Table
+01.11.2022 18:11:02.041 [main] INFO   SAXExample - XML parser
+01.11.2022 18:11:02.498 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:11:02.514 [main] INFO   SAXExample - Create Table
+01.11.2022 18:13:02.931 [main] INFO   SAXExample - XML parser
+01.11.2022 18:13:03.170 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:13:03.184 [main] INFO   SAXExample - Create Table
+01.11.2022 18:13:30.503 [main] INFO   SAXExample - XML parser
+01.11.2022 18:13:30.757 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:13:30.757 [main] INFO   SAXExample - Create Table
+01.11.2022 18:18:31.605 [main] INFO   SAXExample - XML parser
+01.11.2022 18:18:31.974 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:18:31.982 [main] INFO   SAXExample - Create Table
+01.11.2022 18:21:51.102 [main] INFO   SAXExample - XML parser
+01.11.2022 18:21:51.458 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:21:51.466 [main] INFO   SAXExample - Create Table
+01.11.2022 18:23:26.862 [main] INFO   SAXExample - XML parser
+01.11.2022 18:23:27.104 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:23:27.121 [main] INFO   SAXExample - Create Table
+01.11.2022 18:23:47.089 [main] INFO   SAXExample - XML parser
+01.11.2022 18:23:47.564 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:23:47.582 [main] INFO   SAXExample - Create Table
+01.11.2022 18:24:38.130 [main] INFO   SAXExample - XML parser
+01.11.2022 18:24:38.502 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:24:38.509 [main] INFO   SAXExample - Create Table
+01.11.2022 18:25:29.758 [main] INFO   SAXExample - XML parser
+01.11.2022 18:25:30.085 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:25:30.182 [main] INFO   SAXExample - Create Table
+01.11.2022 18:26:26.029 [main] INFO   SAXExample - XML parser
+01.11.2022 18:26:26.374 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:26:26.382 [main] INFO   SAXExample - Create Table
+01.11.2022 18:33:32.525 [main] INFO   SAXExample - XML parser
+01.11.2022 18:33:32.843 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:33:32.850 [main] INFO   SAXExample - Create Table
+01.11.2022 18:35:21.424 [main] INFO   SAXExample - XML parser
+01.11.2022 18:35:21.653 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:35:21.659 [main] INFO   SAXExample - Create Table
+01.11.2022 18:36:36.814 [main] INFO   SAXExample - XML parser
+01.11.2022 18:36:37.146 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:36:37.155 [main] INFO   SAXExample - Create Table
+01.11.2022 18:43:04.072 [main] INFO   SAXExample - XML parser
+01.11.2022 18:43:04.383 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 18:43:04.404 [main] INFO   SAXExample - Create Table
+01.11.2022 19:37:59.307 [main] INFO   SAXExample - XML parser
+01.11.2022 19:37:59.791 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 19:37:59.803 [main] INFO   SAXExample - Create Table
+01.11.2022 19:58:23.973 [main] INFO   SAXExample - XML parser
+01.11.2022 19:58:24.326 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 19:58:24.336 [main] INFO   SAXExample - Create Table
+01.11.2022 20:13:01.084 [main] INFO   SAXExample - XML parser
+01.11.2022 20:13:01.591 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 20:13:01.599 [main] INFO   SAXExample - Create Table
+01.11.2022 21:02:41.084 [main] INFO   SAXExample - XML parser
+01.11.2022 21:02:41.503 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:02:41.515 [main] INFO   SAXExample - Create Table
+01.11.2022 21:02:41.549 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.CheckExist(Action.java:149)
+	at SAXExample.main(SAXExample.java:35)
+01.11.2022 21:03:52.102 [main] INFO   SAXExample - XML parser
+01.11.2022 21:03:52.347 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:03:52.362 [main] INFO   SAXExample - Create Table
+01.11.2022 21:04:51.157 [main] INFO   SAXExample - XML parser
+01.11.2022 21:04:51.456 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:04:51.462 [main] INFO   SAXExample - Create Table
+01.11.2022 21:06:06.191 [main] INFO   SAXExample - XML parser
+01.11.2022 21:06:06.432 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:06:06.440 [main] INFO   SAXExample - Create Table
+01.11.2022 21:06:29.306 [main] INFO   SAXExample - XML parser
+01.11.2022 21:06:29.699 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:06:29.704 [main] INFO   SAXExample - Create Table
+01.11.2022 21:11:53.249 [main] INFO   SAXExample - XML parser
+01.11.2022 21:11:53.536 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:11:53.568 [main] INFO   SAXExample - Create Table
+01.11.2022 21:15:45.040 [main] INFO   SAXExample - XML parser
+01.11.2022 21:15:45.363 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:15:45.370 [main] INFO   SAXExample - Create Table
+01.11.2022 21:18:07.221 [main] INFO   SAXExample - XML parser
+01.11.2022 21:18:07.469 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:18:07.578 [main] INFO   SAXExample - Create Table
+01.11.2022 21:24:25.877 [main] INFO   SAXExample - XML parser
+01.11.2022 21:24:26.302 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:24:26.313 [main] INFO   SAXExample - Create Table
+01.11.2022 21:32:24.221 [main] INFO   SAXExample - XML parser
+01.11.2022 21:32:24.542 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:32:24.542 [main] INFO   SAXExample - Create Table
+01.11.2022 21:37:30.891 [main] INFO   SAXExample - XML parser
+01.11.2022 21:37:31.143 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 21:37:31.153 [main] INFO   SAXExample - Create Table
+01.11.2022 22:32:14.931 [main] INFO   SAXExample - XML parser
+01.11.2022 22:32:15.425 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 22:32:15.437 [main] INFO   SAXExample - Create Table
+01.11.2022 22:35:33.881 [main] INFO   SAXExample - XML parser
+01.11.2022 22:35:34.236 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 22:35:34.244 [main] INFO   SAXExample - Create Table
+01.11.2022 22:38:28.552 [main] INFO   SAXExample - XML parser
+01.11.2022 22:38:28.895 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 22:38:28.912 [main] INFO   SAXExample - Create Table
+01.11.2022 22:39:27.279 [main] INFO   SAXExample - XML parser
+01.11.2022 22:39:27.602 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 22:39:27.612 [main] INFO   SAXExample - Create Table
+01.11.2022 22:42:25.362 [main] ERROR  SAXExample - OPEN SAX Exception: 
+org.xml.sax.SAXParseException: The element type "Name" must be terminated by the matching end-tag "</Name>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1473)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:328)
+	at SAXExample.main(SAXExample.java:25)
+01.11.2022 22:44:17.584 [main] INFO   SAXExample - XML parser
+01.11.2022 22:44:17.869 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 22:44:17.879 [main] INFO   SAXExample - Create Table
+01.11.2022 23:18:34.853 [main] INFO   SAXExample - XML parser
+01.11.2022 23:18:35.133 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 23:18:35.158 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'StartDate TIMESTAMP, STATUS INTEGER)' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewProducts(Action.java:71)
+	at SAXExample.main(SAXExample.java:32)
+01.11.2022 23:19:24.734 [main] INFO   SAXExample - XML parser
+01.11.2022 23:19:24.963 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 23:19:25.043 [main] INFO   SAXExample - Create Table
+01.11.2022 23:26:53.699 [main] INFO   SAXExample - XML parser
+01.11.2022 23:26:54.032 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 23:26:54.054 [main] INFO   SAXExample - Create Table
+01.11.2022 23:28:21.088 [main] INFO   SAXExample - XML parser
+01.11.2022 23:28:21.318 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 23:28:21.328 [main] INFO   SAXExample - Create Table

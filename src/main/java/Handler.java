@@ -1,7 +1,7 @@
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Handler extends DefaultHandler {
 
@@ -24,12 +24,22 @@ public class Handler extends DefaultHandler {
     private String valueParam;
     private String unitParam;
 
+    public final List<String> tagsXML = Arrays.asList("B2B", "Product", "ID", "EAN", "PartNumber",
+            "Name", "Name2", "Title", "Language", "ITEMGROUP_ID", "Manufacturer", "Supplier",
+            "CountryOfOrigin", "MeasureUnit", "RecommendedRetailPriceWithVat", "Price",
+            "Currency", "VAT", "Rate", "Country", "ShortDescription", "LargeDescription", "Documents",
+            "ImageLink", "AdditionalImageLink", "Document", "Name", "Link", "Certificate", "Description",
+            "ImageLink", "Video", "Availability", "internal", "external", "manufacturer",
+            "Guarantee", "GuaranteeType", "Conditions", "IsNew", "IsSale", "IsOutlet", "Season",
+            "Param", "Name", "Value", "Unit");
+
     private Boolean isParam = false;
     private Boolean isDoc = false;
     private Boolean isShortDescription = false;
     private Boolean isLargeDescription = false;
     private Boolean isCertificate = false;
     private Boolean isAvailability = false;
+
 
     public HashMap<Integer, Root> getProducts(){
         return products;
@@ -99,94 +109,98 @@ public class Handler extends DefaultHandler {
         String value = new String(ch, start, length);
         if(currentTagName == null){
             return;
-        }if(currentTagName.equals("ID")) {
+        }else if(currentTagName.equals("ID")) {
             root.setID(new Integer(value));
-        }if(currentTagName.equals("EAN")){
+        }else if(currentTagName.equals("EAN")){
             root.setEAN((value));
-        }if(currentTagName.equals("PartNumber")){
+        }else if(currentTagName.equals("PartNumber")){
             root.setPartNumber((value));
-        }if(currentTagName.equals("Name") && !isParam && !isDoc){
+        }else if(currentTagName.equals("Name") && !isParam && !isDoc){
             root.setName(value);
-        }if(currentTagName.equals("Title")){
+        }else if(currentTagName.equals("Title")){
             root.setTitle((value));
-        }if(currentTagName.equals("Language")){
+        }else if(currentTagName.equals("Language")){
             root.setLanguage((value));
-        }if(currentTagName.equals("ITEMGROUP_ID")){
+        }else if(currentTagName.equals("ITEMGROUP_ID")){
             root.setITEMGROUP_ID(new Integer(value));
-        }if(currentTagName.equals("Manufacturer")){
+        }else if(currentTagName.equals("Manufacturer")){
             root.setManufacturer((value));
-        }if(currentTagName.equals("Supplier")){
+        }else if(currentTagName.equals("Supplier")){
             root.setSupplier((value));
-        }if(currentTagName.equals("CountryOfOrigin")){
+        }else if(currentTagName.equals("CountryOfOrigin")){
             root.setCountryOfOrigin((value));
-        }if(currentTagName.equals("MeasureUnit")){
+        }else if(currentTagName.equals("MeasureUnit")){
             root.setMeasureUnit((value));
-        }if(currentTagName.equals("Price")){
+        }else if(currentTagName.equals("Price")){
                CUR_Price = value;
-        }if(currentTagName.equals("Currency")){
+        }else if(currentTagName.equals("Currency")){
                 CUR_Currency = value;
             if(CUR_Price != null && CUR_Currency != null) {
                 root.setRecommendedRetailPriceWithVat(CUR_Price, CUR_Currency);
                 CUR_Price = null;
                 CUR_Currency = null;
             }
-        }if(currentTagName.equals("Rate")){
+        }else if(currentTagName.equals("Rate")){
             root.setVATRate("Základní sazba");
-        }if(currentTagName.equals("Country")){
+        }else if(currentTagName.equals("Country")){
             root.setVATCountry(value);
-        }if(currentTagName.equals("ShortDescription")){
+        }else if(currentTagName.equals("ShortDescription")){
             //System.out.println(value);
             if(isShortDescription){
                 root.setShortDescription(value);
             }
-        }if(currentTagName.equals("LargeDescription")){
+        }else if(currentTagName.equals("LargeDescription")){
             if(isLargeDescription) {
                 root.setLargeDescription(value);
             }
-        }if(currentTagName.equals("ImageLink")) {
+        }else if(currentTagName.equals("ImageLink")) {
             root.setImageLink(value);
-        }if(currentTagName.equals("AdditionalImageLink")){
+        }else if(currentTagName.equals("AdditionalImageLink")){
             root.setAdditionalImageLink(value);
-        }if(currentTagName.equals("Name") && !isParam && isDoc){
+        }else if(currentTagName.equals("Name") && !isParam && isDoc){
             root.setDocumentName(value);
-        }if(currentTagName.equals("Link")&& !isParam && isDoc){
+        }else if(currentTagName.equals("Link")&& !isParam && isDoc){
             root.setDocumentLink(value);
-        }if(currentTagName.equals("Link")&& isCertificate){
+        }else if(currentTagName.equals("Link")&& isCertificate){
             CertLink = value;
-        }if(currentTagName.equals("Description") && isCertificate){
+        }else if(currentTagName.equals("Description") && isCertificate){
             CertDescription = value;
-        }if(currentTagName.equals("ImageLink") && isCertificate){
+        }else if(currentTagName.equals("ImageLink") && isCertificate){
             root.setCertificates(CertLink, CertDescription, value);
-        }if(currentTagName.equals("Video")){
+        }else if(currentTagName.equals("Video")){
             root.setVideo(value);
-        }if(currentTagName.equals("internal") && isAvailability){
+        }else if(currentTagName.equals("internal") && isAvailability){
             internal = new Integer(value);
-        }if(currentTagName.equals("external") && isAvailability){
+        }else if(currentTagName.equals("external") && isAvailability){
             external = new Integer(value);
-        }if(currentTagName.equals("manufacturer") && isAvailability){
+        }else if(currentTagName.equals("manufacturer") && isAvailability){
             manufacturer = new Integer(value);
             root.setAvailability(internal, external, manufacturer);
-        }if(currentTagName.equals("Guarantee")){
+        }else if(currentTagName.equals("Guarantee")){
             root.setGuarantee(value);
-        }if(currentTagName.equals("GuaranteeType")){
+        }else if(currentTagName.equals("GuaranteeType")){
             root.setGuaranteeType(value);
-        }if(currentTagName.equals("IsNew")){
+        }else if(currentTagName.equals("IsNew")){
             isNew = Boolean.valueOf(value);
-        }if(currentTagName.equals("IsSale")){
+        }else if(currentTagName.equals("IsSale")){
             isSale = Boolean.valueOf(value);
-        }if(currentTagName.equals("IsOutlet")){
+        }else if(currentTagName.equals("IsOutlet")){
             isOutlet = Boolean.valueOf(value);
             root.setConditions(isNew, isSale, isOutlet);
-        }if(currentTagName.equals("Season")){
+        }else if(currentTagName.equals("Season")){
             root.setSeason(value);
-        }if(currentTagName.equals("Name") && isParam){
+        }else if(currentTagName.equals("Name") && isParam){
             nameParam = value;
-        }if(currentTagName.equals("Value")&& isParam){
+        }else if(currentTagName.equals("Value")&& isParam){
             valueParam = value;
-        }if(currentTagName.equals("Unit")&& isParam){
+        }else if(currentTagName.equals("Unit")&& isParam){
             unitParam = value;
             root.setParam(nameParam, valueParam, unitParam);
-
+        }else{
+            if(!tagsXML.contains(currentTagName)){
+                System.out.println(currentTagName + value);
+                root.setUndefinedData(currentTagName, value);
+            }
         }
     }
 
