@@ -148,9 +148,9 @@ public class Handler extends DefaultHandler {
         }if(currentTagName.equals("AdditionalImageLink")){
             root.setAdditionalImageLink(value);
         }if(currentTagName.equals("Name") && !isParam && isDoc){
-            DocName = value;
+            root.setDocumentName(value);
         }if(currentTagName.equals("Link")&& !isParam && isDoc){
-            root.setDocument(DocName,value);
+            root.setDocumentLink(value);
         }if(currentTagName.equals("Link")&& isCertificate){
             CertLink = value;
         }if(currentTagName.equals("Description") && isCertificate){

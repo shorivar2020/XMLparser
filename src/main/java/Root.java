@@ -48,6 +48,17 @@ public class Root {
     private String Season;
     private HashSet<Param> Param  = new HashSet<>();
 
+    public String getDocumentName() {
+        return DocumentName;
+    }
+
+    public String getDocumentLink() {
+        return DocumentLink;
+    }
+
+    private String DocumentName;
+    private String DocumentLink;
+
     public void setID(Integer ID) { this.ID = ID;}
 
     public void setEAN(String EAN) {
@@ -119,11 +130,9 @@ public class Root {
 
     public void setAdditionalImageLink(String link) {this.AdditionalImageLink.add(link);}
 
-    public void clearAdditionalImageLink(){ this.AdditionalImageLink.clear();}
+    public void setDocumentName(String name) { this.DocumentName = name;}
+    public void setDocumentLink(String link) { this.DocumentLink = link;}
 
-    public void setDocument(String name, String link) { this.Document.put(name, link);}
-
-    public void clearDocument(){ this.Document.clear();}
 
     public void setCertificates(String Link, String Description, String ImageLink) {
         this.certificates = new Certificate(Link, Description, ImageLink);
@@ -273,6 +282,19 @@ class Certificate{
     }
 
     public String Link;
+
+    public String getLink() {
+        return Link;
+    }
+
+    public String getDescriptions() {
+        return Descriptions;
+    }
+
+    public String getImageLink() {
+        return ImageLink;
+    }
+
     public String Descriptions;
     public String ImageLink;
 }
@@ -287,6 +309,18 @@ class Param{
     public String Name;
     public String Value;
     public String Unit;
+
+    public String getValue() {
+        return Value;
+    }
+
+    public String getUnit() {
+        return Unit;
+    }
+
+    public String getName() {
+        return Name;
+    }
 }
 
 class Conditions{
@@ -299,6 +333,18 @@ class Conditions{
     public Boolean IsNew;
     public Boolean IsSale;
     public Boolean IsOutlet;
+
+    public Boolean getNew() {
+        return IsNew;
+    }
+
+    public Boolean getSale() {
+        return IsSale;
+    }
+
+    public Boolean getOutlet() {
+        return IsOutlet;
+    }
 }
 
 class Availability{
@@ -311,5 +357,17 @@ class Availability{
     public Integer internal;
     public Integer external;
     public Integer manufacturer;
+
+    public Integer getInternal() {
+        return internal;
+    }
+
+    public Integer getExternal() {
+        return external;
+    }
+
+    public Integer getManufacturer() {
+        return manufacturer;
+    }
 }
 

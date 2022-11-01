@@ -208,3 +208,156 @@ java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check th
 01.11.2022 01:59:26.295 [main] INFO   SAXExample - Create Table
 01.11.2022 01:59:49.668 [main] INFO   SAXExample - Connection was succefull
 01.11.2022 01:59:50.000 [main] INFO   SAXExample - Create Table
+01.11.2022 03:27:49.977 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 03:27:50.330 [main] INFO   SAXExample - Create Table
+01.11.2022 03:32:17.338 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 03:32:17.699 [main] INFO   SAXExample - Create Table
+01.11.2022 03:33:28.960 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 03:33:29.371 [main] INFO   SAXExample - Create Table
+01.11.2022 03:35:28.748 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 03:35:29.145 [main] INFO   SAXExample - Create Table
+01.11.2022 04:36:26.582 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 04:36:27.133 [main] INFO   SAXExample - Create Table
+01.11.2022 05:06:17.452 [main] INFO   SAXExample - XML parser
+01.11.2022 05:06:18.575 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:06:18.950 [main] INFO   SAXExample - Create Table
+01.11.2022 05:09:53.031 [main] INFO   SAXExample - XML parser
+01.11.2022 05:09:53.272 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:09:54.804 [main] INFO   SAXExample - Create Table
+01.11.2022 05:10:25.994 [main] INFO   SAXExample - XML parser
+01.11.2022 05:10:26.237 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:10:26.745 [main] INFO   SAXExample - Create Table
+01.11.2022 05:10:45.126 [main] INFO   SAXExample - XML parser
+01.11.2022 05:10:45.462 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:10:45.865 [main] INFO   SAXExample - Create Table
+01.11.2022 05:11:01.444 [main] INFO   SAXExample - XML parser
+01.11.2022 05:11:01.689 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:11:02.082 [main] INFO   SAXExample - Create Table
+01.11.2022 05:11:23.947 [main] INFO   SAXExample - XML parser
+01.11.2022 05:11:24.188 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:11:24.568 [main] INFO   SAXExample - Create Table
+01.11.2022 05:11:47.185 [main] INFO   SAXExample - XML parser
+01.11.2022 05:11:47.428 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:11:47.837 [main] INFO   SAXExample - Create Table
+01.11.2022 05:12:23.517 [main] INFO   SAXExample - XML parser
+01.11.2022 05:12:23.756 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:12:24.160 [main] INFO   SAXExample - Create Table
+01.11.2022 05:17:47.395 [main] INFO   SAXExample - XML parser
+01.11.2022 05:17:47.698 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:17:48.112 [main] INFO   SAXExample - Create Table
+01.11.2022 05:18:27.551 [main] INFO   SAXExample - XML parser
+01.11.2022 05:18:27.790 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:18:28.171 [main] INFO   SAXExample - Create Table
+01.11.2022 05:21:16.590 [main] INFO   SAXExample - XML parser
+01.11.2022 05:21:16.919 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:21:17.306 [main] INFO   SAXExample - Create Table
+01.11.2022 05:25:02.241 [main] INFO   SAXExample - XML parser
+01.11.2022 05:25:02.497 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:25:04.040 [main] INFO   SAXExample - Create Table
+01.11.2022 05:25:04.054 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://www.summitacademy.cz/Files/ProductDocuments/1488378e-48b1-477a-8e33-3771de1d1' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewRowDocuments(Action.java:114)
+	at SAXExample.main(SAXExample.java:36)
+01.11.2022 05:26:20.480 [main] INFO   SAXExample - XML parser
+01.11.2022 05:26:20.793 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:26:21.257 [main] INFO   SAXExample - Create Table
+01.11.2022 05:26:21.273 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://www.summitacademy.cz/Files/ProductDocuments/1488378e-48b1-477a-8e33-3771de1d1' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewRowDocuments(Action.java:114)
+	at SAXExample.main(SAXExample.java:36)
+01.11.2022 05:29:24.030 [main] INFO   SAXExample - XML parser
+01.11.2022 05:29:24.385 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:29:24.840 [main] INFO   SAXExample - Create Table
+01.11.2022 05:29:24.851 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://www.summitacademy.cz/Files/ProductDocuments/1488378e-48b1-477a-8e33-3771de1d1' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewRowDocuments(Action.java:115)
+	at SAXExample.main(SAXExample.java:36)
+01.11.2022 05:30:14.090 [main] INFO   SAXExample - XML parser
+01.11.2022 05:30:14.321 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:30:14.710 [main] INFO   SAXExample - Create Table
+01.11.2022 05:31:37.345 [main] INFO   SAXExample - XML parser
+01.11.2022 05:31:37.570 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:31:38.004 [main] INFO   SAXExample - Create Table
+01.11.2022 05:31:38.009 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://www.summitacademy.cz/Files/ProductDocuments/1488378e-48b1-477a-8e33-3771de1d1' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewRowDocuments(Action.java:115)
+	at SAXExample.main(SAXExample.java:36)
+01.11.2022 05:31:52.749 [main] INFO   SAXExample - XML parser
+01.11.2022 05:31:52.990 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:31:53.380 [main] INFO   SAXExample - Create Table
+01.11.2022 05:31:53.400 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://www.summitacademy.cz/Files/ProductDocuments/1488378e-48b1-477a-8e33-3771de1d1' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewRowDocuments(Action.java:115)
+	at SAXExample.main(SAXExample.java:36)
+01.11.2022 05:33:31.849 [main] INFO   SAXExample - XML parser
+01.11.2022 05:33:32.084 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:33:32.539 [main] INFO   SAXExample - Create Table
+01.11.2022 05:33:32.564 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://www.summitacademy.cz/Files/ProductDocuments/1488378e-48b1-477a-8e33-3771de1d1' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewRowDocuments(Action.java:115)
+	at SAXExample.main(SAXExample.java:36)
+01.11.2022 05:42:42.318 [main] INFO   SAXExample - XML parser
+01.11.2022 05:42:42.716 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:42:43.155 [main] INFO   SAXExample - Create Table
+01.11.2022 05:44:58.322 [main] INFO   SAXExample - XML parser
+01.11.2022 05:44:58.587 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:44:58.987 [main] INFO   SAXExample - Create Table
+01.11.2022 05:45:29.799 [main] INFO   SAXExample - XML parser
+01.11.2022 05:45:30.025 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:45:30.446 [main] INFO   SAXExample - Create Table
+01.11.2022 05:45:30.462 [main] ERROR  SAXExample - SQL Exception: 
+java.sql.SQLSyntaxErrorException: Unknown column 'startData' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewRowDocuments(Action.java:115)
+	at SAXExample.main(SAXExample.java:36)
+01.11.2022 05:46:30.335 [main] INFO   SAXExample - XML parser
+01.11.2022 05:46:30.564 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:46:30.946 [main] INFO   SAXExample - Create Table
+01.11.2022 05:46:30.959 [main] ERROR  SAXExample - SQL Exception: 
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'ImageLink' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1334)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2084)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1245)
+	at Action.NewRowDocuments(Action.java:115)
+	at SAXExample.main(SAXExample.java:36)
+01.11.2022 05:47:12.301 [main] INFO   SAXExample - XML parser
+01.11.2022 05:47:12.528 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:47:12.972 [main] INFO   SAXExample - Create Table
+01.11.2022 05:48:18.417 [main] INFO   SAXExample - XML parser
+01.11.2022 05:48:18.751 [main] INFO   SAXExample - Connection was succefull
+01.11.2022 05:48:19.195 [main] INFO   SAXExample - Create Table

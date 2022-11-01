@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Action {
     private static final String URL = "jdbc:mysql://localhost:3306/parserXML";
@@ -31,112 +28,126 @@ public class Action {
     }
 
     public void NewProducts(Statement statement) throws SQLException {
-        statement.executeUpdate("DROP table IF EXISTS Products");
-        statement.executeUpdate("DROP table IF EXISTS RecommendedRetailPriceWithVat");
-        statement.executeUpdate("DROP table IF EXISTS VAT");
-        statement.executeUpdate("DROP table IF EXISTS Documents");
-        statement.executeUpdate("DROP table IF EXISTS AditionalLink");
-        statement.executeUpdate("DROP table IF EXISTS Availability");
-        statement.executeUpdate("DROP table IF EXISTS Conditions");
-        statement.executeUpdate("DROP table IF EXISTS Param");
+//        statement.executeUpdate("DROP table IF EXISTS Products");
+//        statement.executeUpdate("DROP table IF EXISTS RecommendedRetailPriceWithVat");
+//        statement.executeUpdate("DROP table IF EXISTS VAT");
+//        statement.executeUpdate("DROP table IF EXISTS Documents");
+//        statement.executeUpdate("DROP table IF EXISTS AditionalImage");
+//        statement.executeUpdate("DROP table IF EXISTS Availability");
+//        statement.executeUpdate("DROP table IF EXISTS Conditions");
+//        statement.executeUpdate("DROP table IF EXISTS Param");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS Products " +
                 "(ID INTEGER, EAN VARCHAR(64), PartNumber VARCHAR(64), ProductName VARCHAR(64)," +
                 "DocTitle VARCHAR(64), DocLanguage VARCHAR(64), ITEMGROUP_ID VARCHAR(64)," +
                 "Manufacturer VARCHAR(64), Supplier VARCHAR(64), CountryOfOrigin VARCHAR(64)," +
                 " MeasureUnit VARCHAR(64), ShortDescription VARCHAR(256), LargeDescription VARCHAR(256)," +
                 "Guarantee VARCHAR(64), GuaranteeType VARCHAR(64), Season VARCHAR(64)," +
-                "StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64));");
+                "StartDate TIMESTAMP, STATUS INTEGER);");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS RecommendedRetailPriceWithVat " +
                 "(ID INTEGER, Price VARCHAR (64), Currency VARCHAR (64)," +
-                "StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64));");
+                "StartDate TIMESTAMP, STATUS INTEGER);");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS VAT " +
                 "(ID INTEGER, Rate VARCHAR (64), Country VARCHAR (64)," +
-                "StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64));");
+                "StartDate TIMESTAMP, STATUS INTEGER);");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS Documents " +
-                "(ID INTEGER, ImageLink VARCHAR (64), Video VARCHAR (64), DocumentName VARCHAR(64)," +
+                "(ID INTEGER, ImageLink VARCHAR (256), Video VARCHAR (64), DocumentName VARCHAR(64)," +
                 " DocumentLink VARCHAR(64), CertificateLink VARCHAR(64), CertificateDescription VARCHAR(64)," +
                 "CertificateImageLink VARCHAR(64)," +
-                "StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64));");
+                "StartDate TIMESTAMP, STATUS INTEGER);");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS AditionalImage " +
-                "(ID INTEGER, AditionalImageLink VARCHAR (64)," +
-                "StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64));");
+                "(ID INTEGER, AditionalImageLink VARCHAR(64)," +
+                "StartDate TIMESTAMP, STATUS INTEGER);");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS Availability" +
                 "(ID INTEGER, availabilityInternal INTEGER, availabilityExternal INTEGER," +
                 " availabilityManufacture INTEGER," +
-                "StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64));");
+                "StartDate TIMESTAMP, STATUS INTEGER);");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS Conditions " +
                 "(ID INTEGER, IsNew VARCHAR(64), IsSale VARCHAR(64), IsOutlet VARCHAR(64)," +
-                "StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64));");
+                "StartDate TIMESTAMP, STATUS INTEGER);");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS Param " +
                 "(ID INTEGER, ParamName VARCHAR(64), Value VARCHAR(64), Unit VARCHAR(64)," +
-                "StartDate TIMESTAMP, EndDate TIMESTAMP,  IsCurrent VARCHAR(64));");
+                "StartDate TIMESTAMP, STATUS INTEGER);");
     }
 
-    public void NewRowProducts(Statement statement, Integer ID, String EAX, Integer PartNumber,
-                       String ProductName, String DocTitle, String DocLanguage, String ITEMGROUP_ID,
-                       String Manufacturer, String Supplier, String CountryOfOrigin, String MeasureUnit,
-                       String ShortDescription, String LargeDescription, String Guarantee, String GuaranteeType,
-                       String Season) throws SQLException{
+
+
+    public void NewRowProducts(Statement statement, Timestamp t, Integer ID, String EAX, Integer PartNumber,
+                               String ProductName, String DocTitle, String DocLanguage, String ITEMGROUP_ID,
+                               String Manufacturer, String Supplier, String CountryOfOrigin, String MeasureUnit,
+                               String ShortDescription, String LargeDescription, String Guarantee, String GuaranteeType,
+                               String Season) throws SQLException{
         String sql = "INSERT INTO Products (ID, EAX, PartNumber, ProductName, DocTitle, DocLanguage, ITEMGROUP_ID," +
                 "Manufacturer, Supplier, CountryOfOrigin, MeasureUnit, ShortDescription, LargeDescription, Guarantee," +
-                "GuaranteeType, Season) VALUES (" + ID + "," + EAX + "," + PartNumber + "," + ProductName
+                "GuaranteeType, Season, StartDate) VALUES (" + ID + "," + EAX + "," + PartNumber + "," + ProductName
                 + "," + DocTitle + "," + DocLanguage + "," + ITEMGROUP_ID + "," + Manufacturer
                 + "," + Supplier + "," + CountryOfOrigin + "," + MeasureUnit + "," + ShortDescription
-                + "," + LargeDescription + "," + Guarantee + "," + GuaranteeType + "," + Season + ")";
+                + "," + LargeDescription + "," + Guarantee + "," + GuaranteeType + "," + Season + "," + t + ")";
         statement.executeUpdate(sql);
         //statement.executeUpdate("insert into Products set EAX = '12345'");
     }
 
-    public void NewRowAditionalImage(Statement statement, Integer ID, String AditionalImageLink) throws SQLException {
-        String sql = "INSERT INTO aditionalimage (ID, AditionalImageLink) VALUES (" + ID + "," + AditionalImageLink + ")";
+    public void NewRowAditionalImage(Statement statement, Timestamp t, Integer ID, String AditionalImageLink) throws SQLException {
+        String sql = "INSERT INTO aditionalimage (ID, AditionalImageLink, StartData) VALUES " +
+                "(" + ID + "," + AditionalImageLink + "," + t + ")";
         statement.executeUpdate(sql);
     }
 
-    public void NewRowAvailability(Statement statement, Integer ID, Integer i, Integer e, Integer m) throws SQLException {
+    public void NewRowAvailability(Statement statement, Timestamp t, Integer ID, Integer i, Integer e, Integer m) throws SQLException {
         String sql = "INSERT INTO availability(ID, availabilityInternal, availabilityExternal, " +
-                "availabilityManufacture) VALUES (" + ID + "," + i + "," + e + "," + m + ")";
+                "availabilityManufacture, startData) VALUES (" + ID + "," + i + "," + e + "," + m + "," + t + ")";
         statement.executeUpdate(sql);
     }
 
-    public void NewRowConditions(Statement statement, Integer ID, String IsNew, String IsSale, String IsOutlet) throws SQLException {
-        String sql = "INSERT INTO conditions(ID, IsNew, IsSale, IsOutlet) VALUES (" + ID + "," + IsNew + "," + IsSale + "," + IsOutlet + ")";
+    public void NewRowConditions(Statement statement, Timestamp t, Integer ID, String IsNew, String IsSale, String IsOutlet) throws SQLException {
+        String sql = "INSERT INTO conditions(ID, IsNew, IsSale, IsOutlet, startData)" +
+                " VALUES (" + ID + "," + IsNew + "," + IsSale + "," + IsOutlet + "," + t + ")";
         statement.executeUpdate(sql);
     }
 
-    public void NewRowDocuments(Statement statement, Integer ID, String ImageLink, String Video,
+    public void NewRowDocuments(Statement statement, Timestamp t, Integer ID, String ImageLink, String Video,
                                 String DocumentName, String DocumentLink, String CertificateLink,
                                 String CertificateDescription, String CertificateImageLink) throws SQLException {
-        String sql = "INSERT INTO documents(ID, ImageLink, Video, DocumentName, DocumentLink," +
-                "CertificateLink, CertificateDescription, CertificateImageLink) VALUES " +
-                "(" + ID + "," + ImageLink + "," + Video + "," + DocumentName + "," + DocumentLink
-                + "," + CertificateLink  + "," +  CertificateDescription  + "," + CertificateImageLink + ")";
+        String sql = "INSERT INTO documents (ID, ImageLink, Video, DocumentName, DocumentLink," +
+                " CertificateLink, CertificateDescription, CertificateImageLink, StartDate) VALUES " +
+                "('" + ID + "', '" + ImageLink + "', '" + Video + "', '" + DocumentName + "', '" + DocumentLink
+                + "', '" + CertificateLink  + "', '" +  CertificateDescription  + "', '" + CertificateImageLink + "', '" + t + "')";
+       // System.out.println(sql);
         statement.executeUpdate(sql);
     }
 
-    public void NewRowParam(Statement statement, Integer ID, String ParamName, String Value, String Unit) throws SQLException {
-        String sql = "INSERT INTO param(ID, ParamName, Value, Unit) VALUES" +
-                " (" + ID + "," + ParamName + "," + Value + "," + Unit + ")";
+    public void NewRowParam(Statement statement, Timestamp t, Integer ID, String ParamName, String Value, String Unit) throws SQLException {
+        String sql = "INSERT INTO param(ID, ParamName, Value, Unit, startData) VALUES" +
+                " (" + ID + "," + ParamName + "," + Value + "," + Unit + "," + t + ")";
         statement.executeUpdate(sql);
     }
 
-    public void NewRowRecommended(Statement statement, Integer ID, String Price, String Currency) throws SQLException {
-        String sql = "INSERT INTO recommendedretailpricewithvat(ID, Price, Currency) VALUES" +
-                " (" + ID + "," + Price + "," + Currency + ")";
+    public void NewRowRecommended(Statement statement, Timestamp t, Integer ID, String Price, String Currency) throws SQLException {
+        String sql = "INSERT INTO recommendedretailpricewithvat(ID, Price, Currency, startDATA) VALUES" +
+                " (" + ID + "," + Price + "," + Currency + "," + t + ")";
         statement.executeUpdate(sql);
     }
 
-    public void NewRowVAT(Statement statement, Integer ID, String Rate, String Country) throws SQLException {
-        String sql = "INSERT INTO vat(ID, Rate, Country) VALUES" +
-                " (" + ID + "," + Rate + "," + Country + ")";
+    public void NewRowVAT(Statement statement, Timestamp t, Integer ID, String Rate, String Country) throws SQLException {
+        String sql = "INSERT INTO vat(ID, Rate, Country, startData) VALUES" +
+                " (" + ID + "," + Rate + "," + Country + "," + t + ")";
         statement.executeUpdate(sql);
     }
 
-    public void NewRowData(Statement statement, String table, String value) throws SQLException {
-        statement.executeUpdate(buildSQLString(table, value));
+    public void NewRowData(Statement statement, String table, String value, String col, Timestamp t) throws SQLException {
+        statement.executeUpdate(buildSQLString(table, value, col, t));
     }
 
-    public String buildSQLString(String table, String value) {
-        String sql = "INSERT INTO" + table + "(col) VALUES ('" + value + ")";
+    public String buildSQLString(String table, String value, String col, Timestamp t) {
+        String sql = "INSERT INTO" + table + "(" + col +  ", startData) VALUES ('" + value + "," + t + ")";
         return sql;
+    }
+
+    public void CheckExist(Statement statement, String table, String ID) throws SQLException {
+        ResultSet r = statement.executeQuery("SELECT COUNT(1) FROM " + table + " WHERE ID =" + ID + " AND STATUS = 1");
+        if(r != null){
+            statement.executeUpdate("UPDATE " + table  + " SET STATUS=" + 0 +
+                    " WHERE CustomerID=" + ID + ")");
+        }
+        //IF (SELECT COUNT(1) FROM [Table] where [field]='abcd')>0
     }
 }
