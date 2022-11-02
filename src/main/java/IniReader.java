@@ -4,35 +4,28 @@ import org.ini4j.Wini;
 /*Read configuration file type IMI*/
 public class IniReader {
     public String url;
-    String server;
-    Integer port;
     String username;
+    String password;
+    String urlDB;
 
-    public IniReader (String path) throws Exception{
+    public IniReader (org.slf4j.Logger log, String path) throws Exception{
         Wini ini = new Wini(new File(path));
         this.url = ini.get("website", "url", String.class);
-        this.server = ini.get("database", "server", String.class);
-        this.port = ini.get("database", "port", Integer.class);
         this.username = ini.get("database", "username", String.class);
-        System.out.println("url=" + url);
-        System.out.println("server= " + server);
-        System.out.println("port = " + port);
-        System.out.println("username = " + username);
+        this.urlDB = ini.get("database", "urlDB", String.class);
+        this.password = ini.get("database", "password", String.class);
+        log.info("Data was received from Config file");
     }
 
     public String getIniURL(){
         return this.url;
     }
 
-    public String getIniServer(){
-        return this.server;
-    }
-
-    public Integer getIniPort(){
-        return this.port;
-    }
-
     public String getUsername(){
         return this.username;
     }
+
+    public String getUrlDB(){return this.urlDB;}
+
+    public String getPassword() {return this.password;}
 }

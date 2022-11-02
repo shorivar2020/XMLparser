@@ -1,27 +1,7 @@
 import java.util.*;
 
+/*Struct of Product*/
 public class Root {
-//    @Override
-//    public String toString() {
-
-    public String getVATRate() {
-        return VATRate;
-    }
-//        return "Root{" + ID + "/" + EAN + "/" + PartNumber + "/"
-//                + Name + "/" + Title + "/" + Language + "/"
-//                + ITEMGROUP_ID + "/" + Manufacturer + "/" + Supplier + "/"
-//                + CountryOfOrigin + "/" + MeasureUnit + "/"
-//                + RecommendedRetailPriceWithVat + "/" + VATRate +"/" + VATCountry + "/" + ShortDescription + "/"
-//                + LargeDescription + "}";
-//    }
-//    @Override
-//    public String toString() {
-//        return "Doc{" + ImageLink + "/" + AdditionalImageLink + "/" + Document + "/"
-//                + certificates + "/" + Video + "/" + availability + "/"
-//                + Guarantee + "/" + GuaranteeType + "/" + Conditions + "/"
-//                + Season + "/" + Param + "}";
-//    }
-
     private Integer ID;
     private String EAN;
     private String PartNumber;
@@ -33,8 +13,7 @@ public class Root {
     private String Supplier;
     private String CountryOfOrigin;
     private String MeasureUnit;
-    private Map<String, String> RecommendedRetailPriceWithVat = new HashMap<String, String>();
-    private String WithVat;
+    private Map<String, String> RecommendedRetailPriceWithVat = new HashMap<>();
     private String VATRate;
     private ArrayList<String> VATCountry = new ArrayList<>();
     private ArrayList<String> ShortDescription = new ArrayList<>();
@@ -51,6 +30,8 @@ public class Root {
     private Conditions Conditions;
     private String Season;
     private HashSet<Param> Param  = new HashSet<>();
+    private String DocumentName;
+    private String DocumentLink;
 
     public HashMap<String, String> getUndefinedData() {
         return undefinedData;
@@ -70,9 +51,9 @@ public class Root {
         return DocumentLink;
     }
 
-    private String DocumentName;
-    private String DocumentLink;
-
+    public String getVATRate() {
+        return VATRate;
+    }
     public void setID(Integer ID) { this.ID = ID;}
 
     public void setEAN(String EAN) {
@@ -117,21 +98,16 @@ public class Root {
         this.RecommendedRetailPriceWithVat.put(Price, Currency);
     }
 
-    public void clearRecommendedRetailPriceWithVat() {
-        this.RecommendedRetailPriceWithVat.clear();
-    }
-
     public void setVATCountry(String Country) {
         this.VATCountry.add(Country);
     }
+
     public void setVATRate(String Rate) {
         this.VATRate = Rate;
     }
 
-
     public void setShortDescription(String shortDescription) {
         this.ShortDescription.add(shortDescription);
-        //System.out.println(shortDescription);
     }
 
     public void setLargeDescription(String largeDescription) {
@@ -146,7 +122,6 @@ public class Root {
 
     public void setDocumentName(String name) { this.DocumentName = name;}
     public void setDocumentLink(String link) { this.DocumentLink = link;}
-
 
     public void setCertificates(String Link, String Description, String ImageLink) {
         this.certificates = new Certificate(Link, Description, ImageLink);
@@ -181,27 +156,21 @@ public class Root {
         this.Param.add(param);
     }
 
-    public void clearParam(){ Param.clear();}
-
     public Integer getID() {
-        return ID;
+        return this.ID;
     }
 
     public String getEAN() {
-        return EAN;
+        return this.EAN;
     }
 
     public String getPartNumber() {
-        return PartNumber;
+        return this.PartNumber;
     }
 
-    public String getName() {
-        return Name;
-    }
+    public String getName() { return this.Name;}
 
-    public String getTitle() {
-        return Title;
-    }
+    public String getTitle() { return this.Title;}
 
     public String getLanguage() {
         return Language;
@@ -220,167 +189,149 @@ public class Root {
     }
 
     public String getCountryOfOrigin() {
-        return CountryOfOrigin;
+        return this.CountryOfOrigin;
     }
 
     public String getMeasureUnit() {
-        return MeasureUnit;
+        return this.MeasureUnit;
     }
 
     public Map<String, String> getRecommendedRetailPriceWithVat() {
-        return RecommendedRetailPriceWithVat;
+        return this.RecommendedRetailPriceWithVat;
     }
 
     public ArrayList<String> getVATCountry() {
-        return VATCountry;
+        return this.VATCountry;
     }
 
-
     public ArrayList<String> getShortDescription() {
-        return ShortDescription;
+        return this.ShortDescription;
     }
 
     public ArrayList<String> getLargeDescription() {
-        return LargeDescription;
+        return this.LargeDescription;
     }
 
     public ArrayList<String> getImageLink() {
-        return ImageLink;
+        return this.ImageLink;
     }
 
     public HashSet<String> getAdditionalImageLink() {
-        return AdditionalImageLink;
+        return this.AdditionalImageLink;
     }
 
     public HashMap<String, String> getDocument() {
-        return Document;
+        return this.Document;
     }
 
     public Certificate getCertificates() {
-        return certificates;
+        return this.certificates;
     }
 
     public String getVideo() {
-        return Video;
+        return this.Video;
     }
 
     public Availability getAvailability() {
-        return availability;
+        return this.availability;
     }
 
     public String getGuarantee() {
-        return Guarantee;
+        return this.Guarantee;
     }
 
     public String getGuaranteeType() {
-        return GuaranteeType;
+        return this.GuaranteeType;
     }
 
     public Conditions getConditions() {
-        return Conditions;
+        return this.Conditions;
     }
 
     public String getSeason() {
-        return Season;
+        return this.Season;
     }
 
     public HashSet<Param> getParam() {
-        return Param;
+        return this.Param;
     }
 }
 
 class Certificate{
-    public Certificate(String link, String descriptions, String imageLink) {
-        Link = link;
-        Descriptions = descriptions;
-        ImageLink = imageLink;
-    }
-
     public String Link;
-
-    public String getLink() {
-        return Link;
-    }
-
-    public String getDescriptions() {
-        return Descriptions;
-    }
-
-    public String getImageLink() {
-        return ImageLink;
-    }
-
     public String Descriptions;
     public String ImageLink;
+    public Certificate(String link, String descriptions, String imageLink) {
+        this.Link = link;
+        this.Descriptions = descriptions;
+        this.ImageLink = imageLink;
+    }
+    public String getLink() {
+        return this.Link;
+    }
+    public String getDescriptions() {
+        return this.Descriptions;
+    }
+    public String getImageLink() {
+        return this.ImageLink;
+    }
 }
 
 class Param{
+    public String Name;
+    public String Value;
+    public String Unit;
     public Param(String name, String value, String unit) {
         Name = name;
         Value = value;
         Unit = unit;
     }
-
-    public String Name;
-    public String Value;
-    public String Unit;
-
     public String getValue() {
         return Value;
     }
-
     public String getUnit() {
         return Unit;
     }
-
     public String getName() {
         return Name;
     }
 }
 
 class Conditions{
+    public Boolean IsNew;
+    public Boolean IsSale;
+    public Boolean IsOutlet;
     public Conditions(Boolean isNew, Boolean isSale, Boolean isOutlet) {
         IsNew = isNew;
         IsSale = isSale;
         IsOutlet = isOutlet;
     }
-
-    public Boolean IsNew;
-    public Boolean IsSale;
-    public Boolean IsOutlet;
-
     public Boolean getNew() {
         return IsNew;
     }
-
     public Boolean getSale() {
         return IsSale;
     }
-
     public Boolean getOutlet() {
         return IsOutlet;
     }
 }
 
 class Availability{
+    public Integer internal;
+    public Integer external;
+    public Integer manufacturer;
     public Availability(Integer internal, Integer external, Integer manufacturer) {
         this.internal = internal;
         this.external = external;
         this.manufacturer = manufacturer;
     }
-
-    public Integer internal;
-    public Integer external;
-    public Integer manufacturer;
-
     public Integer getInternal() {
         return internal;
     }
-
     public Integer getExternal() {
         return external;
     }
-
     public Integer getManufacturer() {
         return manufacturer;
     }

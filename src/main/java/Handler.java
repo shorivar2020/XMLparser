@@ -2,7 +2,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.*;
-
+/*Reactions on XML tag by SAX*/
 public class Handler extends DefaultHandler {
 
     private Root root;
@@ -46,14 +46,10 @@ public class Handler extends DefaultHandler {
     }
 
     @Override
-    public void startDocument() {
-        System.out.println("Start Document");
-        products = new HashMap<>();
-    }
+    public void startDocument() {  products = new HashMap<>();}
 
     @Override
     public void endDocument() {
-        System.out.println("End Document");
     }
 
     @Override
@@ -107,6 +103,7 @@ public class Handler extends DefaultHandler {
     @Override
     public void characters(char ch[], int start, int length) {
         String value = new String(ch, start, length);
+
         if(currentTagName == null){
             return;
         }else if(currentTagName.equals("ID")) {
@@ -153,7 +150,7 @@ public class Handler extends DefaultHandler {
             if(isLargeDescription) {
                 root.setLargeDescription(value);
             }
-        }else if(currentTagName.equals("ImageLink")) {
+        }else if(currentTagName.equals("ImageLink")&& !isCertificate) {
             root.setImageLink(value);
         }else if(currentTagName.equals("AdditionalImageLink")){
             root.setAdditionalImageLink(value);
@@ -161,11 +158,14 @@ public class Handler extends DefaultHandler {
             root.setDocumentName(value);
         }else if(currentTagName.equals("Link")&& !isParam && isDoc){
             root.setDocumentLink(value);
-        }else if(currentTagName.equals("Link")&& isCertificate){
-            CertLink = value;
+        }else if(currentTagName.equals("Link") && isCertificate){
+            this.CertLink = value;
+           // System.out.println(isCertificate);
         }else if(currentTagName.equals("Description") && isCertificate){
-            CertDescription = value;
+            this.CertDescription = value;
+            //System.out.println(isCertificate);
         }else if(currentTagName.equals("ImageLink") && isCertificate){
+            //System.out.println(isCertificate);
             root.setCertificates(CertLink, CertDescription, value);
         }else if(currentTagName.equals("Video")){
             root.setVideo(value);
