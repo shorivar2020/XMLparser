@@ -142,7 +142,6 @@ public class Handler extends DefaultHandler {
         }else if(currentTagName.equals("Country")){
             root.setVATCountry(value);
         }else if(currentTagName.equals("ShortDescription")){
-            //System.out.println(value);
             if(isShortDescription){
                 root.setShortDescription(value);
             }

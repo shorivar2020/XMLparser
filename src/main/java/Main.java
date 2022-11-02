@@ -1,9 +1,10 @@
+import java.util.Scanner;
+
 @lombok.extern.slf4j.Slf4j
 public class Main {
     public static void main(String[] args) throws Exception {
-//        Scanner scanner = new Scanner(System.in);
-//        String path = scanner.nextLine();
-        String path = "config.ini";
+        Scanner scanner = new Scanner(System.in);
+        String path = scanner.nextLine();
         log.info("Path was received");
         IniReader ini = new IniReader(log, path);
         String url = ini.getIniURL();

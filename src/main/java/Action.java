@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /*Class for connection with DB and work only with mySQL Console*/
 public class Action {
@@ -30,12 +32,12 @@ public class Action {
 
     public void dropTables(Statement statement) throws SQLException{
         statement.executeUpdate("DROP table IF EXISTS RecommendedRetailPriceWithVat");
-        //statement.executeUpdate("DROP table IF EXISTS VAT");
+        statement.executeUpdate("DROP table IF EXISTS VAT");
         statement.executeUpdate("DROP table IF EXISTS Documents");
         statement.executeUpdate("DROP table IF EXISTS AditionalImage");
         statement.executeUpdate("DROP table IF EXISTS Availability");
         statement.executeUpdate("DROP table IF EXISTS Conditions");
-        //statement.executeUpdate("DROP table IF EXISTS Param");
+        statement.executeUpdate("DROP table IF EXISTS Param");
         statement.executeUpdate("DROP table IF EXISTS UndefinedData");
         statement.executeUpdate("DROP table IF EXISTS Products");
 
@@ -84,7 +86,7 @@ public class Action {
 
 
 
-    public void NewRowProducts(Statement statement, Timestamp t, Integer ID, String EAX, String PartNumber,
+    public void NewRowProducts(Statement statement, String t, Integer ID, String EAX, String PartNumber,
                                String ProductName, String DocTitle, String DocLanguage, Integer ITEMGROUP_ID,
                                String Manufacturer, String Supplier, String CountryOfOrigin,
                                String MeasureUnit, String ShortDescription,
@@ -106,7 +108,7 @@ public class Action {
         log.info("Insert new Product Data");
     }
 
-    public void NewRowAditionalImage(Statement statement, Timestamp t, Integer ID, String AditionalImageLink)
+    public void NewRowAditionalImage(Statement statement, String t, Integer ID, String AditionalImageLink)
             throws SQLException {
         String sql = "INSERT INTO aditionalimage (ID, AditionalImageLink, StartDate, STATUS)" +
                 " VALUES (" + ID + ",'" + AditionalImageLink + "','" + t + "',1)";
@@ -114,7 +116,7 @@ public class Action {
         log.info("Insert new AditionalImage Data");
     }
 
-    public void NewUndefinedData(Statement statement, Timestamp t, Integer ID, String Tag,
+    public void NewUndefinedData(Statement statement, String t, Integer ID, String Tag,
                                  String ValueOfData) throws SQLException {
         String sql = "INSERT INTO undefineddata (ID, Tag, ValueOfData, StartDate, STATUS)" +
                 " VALUES (" + ID + ",'" + Tag + "','" + ValueOfData + "','" + t + "',1)";
@@ -122,7 +124,7 @@ public class Action {
         log.info("Insert new Undefined Data");
     }
 
-    public void NewRowAvailability(Statement statement, Timestamp t, Integer ID, Integer i,
+    public void NewRowAvailability(Statement statement, String t, Integer ID, Integer i,
                                    Integer e, Integer m) throws SQLException {
         String sql = "INSERT INTO availability(ID, availabilityInternal, availabilityExternal, " +
                 "availabilityManufacture, StartDate, STATUS) VALUES (" + ID + "," + i + ","
@@ -131,7 +133,7 @@ public class Action {
         log.info("Insert new Availability Data");
     }
 
-    public void NewRowConditions(Statement statement, Timestamp t, Integer ID, String IsNew,
+    public void NewRowConditions(Statement statement, String t, Integer ID, String IsNew,
                                  String IsSale, String IsOutlet) throws SQLException {
         String sql = "INSERT INTO conditions(ID, IsNew, IsSale, IsOutlet, StartDate, STATUS)" +
                 " VALUES (" + ID + ",'" + IsNew + "','" + IsSale + "','" + IsOutlet + "','" + t + "',1)";
@@ -139,7 +141,7 @@ public class Action {
         log.info("Insert new Conditions Data");
     }
 
-    public void NewRowDocuments(Statement statement, Timestamp t, Integer ID, String ImageLink, String Video,
+    public void NewRowDocuments(Statement statement, String t, Integer ID, String ImageLink, String Video,
                                 String DocumentName, String DocumentLink, String CertificateLink,
                                 String CertificateDescription, String CertificateImageLink)
             throws SQLException {
@@ -154,7 +156,7 @@ public class Action {
         log.info("Insert new Documents Data");
     }
 
-    public void NewRowParam(Statement statement, Timestamp t, Integer ID, String ParamName,
+    public void NewRowParam(Statement statement, String t, Integer ID, String ParamName,
                             String Value, String Unit) throws SQLException {
         String sql = "INSERT INTO param(ID, ParamName, Value, Unit, StartDate, STATUS) VALUES" +
                 " (" + ID + ", '" + ParamName + "', '" + Value + "', '" + Unit + "', '" + t + "',1)";
@@ -162,7 +164,7 @@ public class Action {
         log.info("Insert new Param Data");
     }
 
-    public void NewRowRecommended(Statement statement, Timestamp t, Integer ID,
+    public void NewRowRecommended(Statement statement, String t, Integer ID,
                                   String Price, String Currency) throws SQLException {
         String sql = "INSERT INTO recommendedretailpricewithvat" +
                 "(ID, Price, Currency, StartDate, STATUS) VALUES" +
@@ -171,7 +173,7 @@ public class Action {
         log.info("Insert new Recommended Data");
     }
 
-    public void NewRowVAT(Statement statement, Timestamp t, Integer ID, String Rate, String Country)
+    public void NewRowVAT(Statement statement, String t, Integer ID, String Rate, String Country)
             throws SQLException {
         String sql = "INSERT INTO vat(ID, Rate, Country, StartDate, STATUS) VALUES" +
                 " (" + ID + ",'" + Rate + "','" + Country + "','" + t + "',1)";
@@ -191,13 +193,14 @@ public class Action {
         return sql;
     }
 
-    public void CheckExist(Statement statement, String table, Integer ID) throws SQLException {
-        ResultSet r = statement.executeQuery("SELECT COUNT(1) FROM " + table + " WHERE ID =" + ID
-                + " AND STATUS = 1");
+    public void CheckExist(Statement statement, String table, Integer ID, String time) throws SQLException {
+        String sql = "SELECT COUNT(1) FROM " + table + " WHERE ID =" + ID
+                + " AND STATUS = 1 AND StartDate < '" + time + "'";
+        ResultSet r = statement.executeQuery(sql);
         if(r != null){
             log.info("New packet of DATA in" + table);
-            String sql = "UPDATE " + table  + " SET STATUS = 0 WHERE ID = " + ID;
-            statement.executeUpdate(sql);
+            String sql1 = "UPDATE " + table  + " SET STATUS = 0 WHERE ID = " + ID;
+            statement.executeUpdate(sql1);
             log.info("Update status in " + table);
         }
     }
